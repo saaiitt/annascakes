@@ -1,0 +1,59 @@
+.behind-tamunas {
+    padding: 2rem 0;
+    overflow: hidden;
+    .behind-tamunas-container {
+        @include wide-container;
+        text-align: center;
+        .behind-flex {
+            &__image {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-image: url(/assets/images/splash3.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: clamp(24rem, calc((608 / 625) * 100vw), 38rem);
+                    width: clamp(32rem, calc((832 / 625) * 100vw), 52rem);
+                    z-index: -1;
+                }
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            &__content .heading {
+                font-size: 1.25rem;
+                span {
+                    color: $darkPink;
+                    font-size: inherit;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .behind-tamunas {
+        padding: 4rem 0;
+        .behind-tamunas-container {
+            h2 {
+                margin-bottom: 2rem;
+            }
+            .behind-flex {
+                display: flex;
+                gap: 2rem;
+                &__content {
+                    width: 50%;
+                    text-align: left;
+                }
+                &__image {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

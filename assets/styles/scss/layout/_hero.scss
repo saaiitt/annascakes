@@ -1,0 +1,174 @@
+.hero {
+    padding: 2rem 0;
+    background-color: $pink;
+    position: relative;
+    .hero-container {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        z-index: 1;
+        &__content {
+            @include wide-container;
+            text-align: center;
+            margin-top: 2rem;
+            p {
+                margin-bottom: 2rem;
+            }
+        }
+        &__illustration {
+            overflow: hidden;
+            &::before {
+                content: '';
+                background-image: url(/assets/images/hero-splash2.png);
+                background-repeat: no-repeat;
+                position: absolute;
+                height: clamp(12rem, calc((416 / 800) * 100vw), 26rem);
+                width: clamp(20rem, calc((896 / 800) * 100vw), 56rem);
+                background-size: cover;
+                z-index: -1;
+                right: 0;
+                top: clamp(2rem, calc((192 / 800) * 100vw), 12rem);
+
+                // animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+                // animation-duration: 1s; /* don't forget to set a duration! */
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                margin-left: 2rem;
+
+                // animation: fadeInRight; /* referring directly to the animation's @keyframe declaration */
+                // animation-duration: 1s; /* don't forget to set a duration! */
+            }
+        }
+    }
+    &--illustration {
+        overflow: hidden;
+        &::before {
+            content: '';
+            background-repeat: no-repeat;
+            background-size: contain;
+            // height: 6rem;
+            height: clamp(6rem, calc((256 / 1200) * 100vw), 16rem);
+            // width: 18rem;
+            width: clamp(18rem, calc((784 / 1200) * 100vw), 49rem);
+            // height: 16rem;
+            // width: 49rem;
+            position: absolute;
+            right: -6rem;
+            // right: -14rem;
+            bottom: 0;
+            z-index: 0;
+        }
+    }
+    &__heading {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    .section-divider {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.hero-about {
+    &::before {
+        background-image: url(/assets/images/hero-mango-cake.png);
+    }
+}
+.hero-our-cakes {
+    &::before {
+        background-image: url(/assets/images/hero-strawberry.png);
+    }
+}
+.hero-gallery {
+    &::before {
+        background-image: url(/assets/images/hero-fusion.png);
+    }
+}
+.hero-faq {
+    &::before {
+        background-image: url(/assets/images/hero-blueberry.png);
+    }
+}
+.hero-blog {
+    &::before {
+        background-image: url(/assets/images/hero-minimalist.png);
+    }
+}
+.hero-contact {
+    &::before {
+        background-image: url(/assets/images/hero-strawberryshortcake.png);
+    }
+}
+.drip {
+    width: 100%;
+}
+.drip-desktop {
+    display: none;
+}
+
+@media screen and (min-width: 50em) {
+    .hero {
+        padding: 0 0 4rem;
+        overflow: hidden;
+        .hero-container {
+            @include wide-container;
+            flex-direction: row;
+            &__content {
+                text-align: left;
+                width: 50%;
+                margin-top: 0;
+            }
+            &__illustration {
+                width: 50%;
+                img {
+                    position: absolute;
+                    margin-left: 0;
+                    max-height: clamp(20rem, calc((384 / 1024) * 100vw), 24rem);
+                }
+                &::before {
+                    height: 16rem;
+                    width: 36rem;
+                    // height: clamp(13rem, calc((256 / 800) * 100vw), 16rem);
+                    // width: clamp(26rem, calc((576 / 800) * 100vw), 36rem);
+                }
+            }
+        }
+        &--illustration {
+            padding: 4rem 0;
+            &::before {
+                right: -14rem;
+            }
+        }
+    }
+    .drip {
+        display: none;
+    }
+    .drip-desktop {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+@media screen and (min-width: 67.5em) {
+    .hero {
+        padding: 0 0 18rem;
+        .hero-container__illustration {
+            img {
+                max-height: initial;
+                margin-left: -6rem;
+            }
+            &::before {
+                height: 26rem;
+                width: 56rem;
+            }
+        }
+        &--illustration {
+            padding: 5rem 0;
+        }
+    }
+}

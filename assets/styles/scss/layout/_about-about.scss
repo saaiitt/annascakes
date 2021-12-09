@@ -1,0 +1,29 @@
+.about-us {
+    padding: 2rem 0;
+    .about-us-container {
+        @include wide-container;
+        text-align: center;
+        &__image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+        }
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .about-us {
+        padding: 4rem 0;
+        .about-us-container {
+            display: flex;
+            text-align: left;
+            gap: 2rem;
+            &__content {
+                width: 50%;
+            }
+            &__image {
+                width: 50%;
+            }
+        }
+    }
+}

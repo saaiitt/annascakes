@@ -1,0 +1,19 @@
+#btn-scroll {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    padding: 1rem;
+    background: $primary;
+    border-radius: 2em;
+    border: none;
+    color: $white;
+    margin: 2rem;
+    transition: background .3s;
+    border: 1px solid $primary;
+    &:hover {
+        background: $white;
+        color: $primary;
+    }
+}

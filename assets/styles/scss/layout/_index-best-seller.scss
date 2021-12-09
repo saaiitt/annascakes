@@ -1,0 +1,55 @@
+.best-seller {
+    padding: 2rem 0;
+    position: relative;
+    .best-seller-container {
+        @include wide-container;
+        text-align: center;
+        display: flex;
+        flex-direction: column-reverse;
+        &__image {
+            overflow: hidden;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            &::before {
+                content: '';
+                background-image: url(/assets/images/hero-splash1.png);
+                background-repeat: no-repeat;
+                position: absolute;
+                height: clamp(12rem, calc((416 / 800) * 100vw), 26rem);
+                width: clamp(20rem, calc((896 / 800) * 100vw), 56rem);
+                background-size: cover;
+                z-index: -1;
+                right: 0;
+                top: clamp(10rem, calc((352 / 600) * 100vw), 22rem);
+            }
+        }
+        &__content {
+            h2 {
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+@media screen and (min-width: 50em) {
+    .best-seller {
+        padding: 4rem 0;
+        .best-seller-container {
+            flex-direction: row;
+            text-align: left;
+            &__content {
+                width: 50%;
+                margin-right: 2rem;
+            }
+            &__image {
+                width: 50%;
+                position: relative;
+                overflow: initial;
+                &::before {
+                    top: clamp(4rem, calc((256 / 1270) * 100vw), 16rem);
+                }
+            }
+        }
+    }
+}

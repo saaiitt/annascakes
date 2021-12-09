@@ -1,0 +1,76 @@
+header {
+    padding: 2rem 0;
+    background: $pink;
+    position: relative;
+    z-index: 1;
+    .header-container {
+        @include wide-container;
+        &--home::before {
+            content: '';
+            background-image: url(/assets/images/hero-splash1-mobile.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            height: 12rem;
+            width: 100%;
+            background-size: cover;
+            z-index: -1;
+            left: 0;
+            top: 0;
+
+            // animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+            // animation-duration: 1s; /* don't forget to set a duration! */
+        }
+        nav {
+            @include space-between;
+            position: relative;
+            .logo-link {
+                .logo {
+                    height: clamp(4rem, calc((128 / 1024) * 100vw), 8rem);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: transform .3s;
+                }
+                &:hover {
+                    .logo {
+                        transform: translate(-50%, -50%) scale(1.1);
+                    }
+                }
+            }
+            .desktop-nav {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 50em) {
+    header {
+        padding: 4rem 0;
+        .header-container {
+            &--home::before {
+                left: initial;
+                right: 0;
+                width: 35rem;
+                height: 18rem;
+                background-size: contain;
+            }
+        }
+    }
+}
+@media screen and (min-width: 64em) {
+    header .header-container nav {
+        .hamburger {
+            display: none;
+        }
+        .desktop-nav {
+            display: initial;
+            display: flex;
+            align-items: center;
+            li {
+                margin: 0 1rem;
+            }
+        }
+    }
+}

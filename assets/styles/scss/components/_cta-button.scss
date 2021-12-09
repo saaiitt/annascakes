@@ -1,0 +1,17 @@
+.cta-button {
+    padding: .5em 2em;
+    border: 1px solid $primary;
+    border-radius: 2em;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: $primary;
+    transition: background-color .3s;
+    &:hover {
+        background-color: $primary;
+        color: $white;
+    }
+    &--button {
+        background-color: $white;
+    }
+}

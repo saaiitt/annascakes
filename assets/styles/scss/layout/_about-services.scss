@@ -1,0 +1,94 @@
+.services {
+    // padding: 2rem 0;
+    background-color: $pink;
+    position: relative;
+    .services-container {
+        @include wide-container;
+        text-align: center;
+        padding: 2rem 0;
+        .cake-details {
+            img {
+                max-width: 100%;
+                height: auto;
+                margin: 1rem 0;
+            }
+            &__content {
+                margin: 1rem 0;
+                span {
+                    display: block;
+                    margin: 1rem 0;
+                }
+            }
+        }
+        &__flavors {
+            ul li {
+                margin: 1rem 0;
+                div {
+                    border-radius: 1rem;
+                    color: $white;
+                    padding: 1rem;
+                    h4 {
+                        color: $white;
+                    }
+                }
+                .mango {
+                    background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.45), 
+                        rgba(0, 0, 0, 0.45)), url(/assets/images/mango-bg.jpg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                }
+                .strawberry {
+                    background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.45), 
+                        rgba(0, 0, 0, 0.45)), url(/assets/images/strawberry-bg.jpg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                }
+                .blueberry {
+                    background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.45), 
+                        rgba(0, 0, 0, 0.45)), url(/assets/images/blueberry-bg.jpg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                }
+            }
+        }
+    }
+    .section-divider {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        &--top {
+            transform: rotate(180deg);
+        }
+        &--bottom {
+            bottom: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .services .services-container {
+        padding: 6rem 0;
+        display: flex;
+        gap: 2rem;
+        &__content {
+            text-align: left;
+            .cake-details {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                img {
+                    margin-left: -18rem;
+                }
+            }
+        }
+        &__flavors h3 {
+            text-align: left;
+        }
+    }
+}

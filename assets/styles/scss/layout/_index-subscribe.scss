@@ -1,0 +1,41 @@
+.subscribe {
+    // padding-top: 2rem;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.45), 
+        rgba(0, 0, 0, 0.45)
+      ), url(/assets/images/subscribe-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    .subscribe-container {
+        @include wide-container;
+        text-align: center;
+        padding: 4rem 0;
+        box-sizing: border-box;
+        h2, p {
+            color: $white;
+        }
+        .section-divider {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            &--top {
+                top: -1px;
+                transform: rotate(180deg);
+            }
+            &--bottom {
+                transform: none;
+                bottom: -1px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 50em) {
+    .subscribe {
+        // padding-top: 4rem;
+        .section-divider {
+            height: 60px;
+        }
+    }
+}

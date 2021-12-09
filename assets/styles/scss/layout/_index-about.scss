@@ -1,0 +1,60 @@
+.about {
+    padding: 2rem 0;
+    position: relative;
+    .about-container {
+        @include wide-container;
+        text-align: center;
+        &__mobile-header {
+            margin-bottom: 2rem;
+        }
+        &__image img {
+            max-width: 100%;
+            height: auto;
+        }
+        &__content {
+            h2 {
+                display: none;
+            }
+        }
+        &::before {
+            content: '';
+            background-image: url(/assets/images/leaf.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            transform: rotate(120deg);
+            height: clamp(5rem, calc((160 / 1000) * 100vw), 10rem);
+            width: clamp(5rem, calc((160 / 1000) * 100vw), 10rem);
+            left: 0;
+            bottom: -2rem;
+            z-index: -1;
+        }
+    }
+}
+@media screen and (min-width: 50em) {
+    .about {
+        padding: 4rem 0;
+        .about-container {
+            display: flex;
+            &__mobile-header {
+                display: none;
+            }
+            &__image {
+                width: 50%;
+            }
+            &__content {
+                width: 50%;
+                text-align: left;
+                margin-left: 2rem;
+                h2 {
+                    display: block;
+                }
+            }
+            &::before {
+                // height: 10rem;
+                // width: 10rem;
+                bottom: -8rem;
+            }
+        }
+    }
+}

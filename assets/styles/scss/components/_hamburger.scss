@@ -1,0 +1,173 @@
+.hamburger {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.burger {
+    height: 3em;
+    width: 2em;
+    position: relative;
+    font-size: 12px;
+    cursor: pointer;
+    -webkit-transition: .2s all;
+    -o-transition: .2s all;
+    transition: .2s all;
+    -webkit-tap-highlight-color: transparent; }
+    .burger .burger-lines:after {
+      left: 0;
+      top: -1em; }
+    .burger .burger-lines:before {
+      left: 1em;
+      top: 1em; }
+    .burger:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 150%;
+      width: 150%;
+      top: -25%;
+      left: -25%; }
+    .burger .burger-lines {
+      top: 50%;
+      margin-top: -0.125em; }
+      .burger .burger-lines, .burger .burger-lines:after, .burger .burger-lines:before {
+        pointer-events: none;
+        display: block;
+        content: '';
+        width: 100%;
+        border-radius: 0.25em;
+        background-color: $primary;
+        height: 0.25em;
+        position: absolute;
+        -webkit-transform: rotate(0);
+            -ms-transform: rotate(0);
+                transform: rotate(0); }
+      .burger .burger-lines:after {
+        left: 0;
+        top: -.6em; }
+      .burger .burger-lines:before {
+        left: 1em;
+        top: .6em; }
+  @-webkit-keyframes burgerAnimationSlide {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1; }
+    25% {
+      opacity: 0; }
+    49% {
+      -webkit-transform: translateX(-0.7em);
+              transform: translateX(-0.7em);
+      opacity: 0; }
+    50% {
+      -webkit-transform: translateX(0.7em);
+              transform: translateX(0.7em);
+      opacity: 0; }
+    51% {
+      opacity: 0; }
+    75% {
+      opacity: 1; }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+      opacity: 1; } }
+  
+  @keyframes burgerAnimationSlide {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1; }
+    25% {
+      opacity: 0; }
+    49% {
+      -webkit-transform: translateX(-0.7em);
+              transform: translateX(-0.7em);
+      opacity: 0; }
+    50% {
+      -webkit-transform: translateX(0.7em);
+              transform: translateX(0.7em);
+      opacity: 0; }
+    51% {
+      opacity: 0; }
+    75% {
+      opacity: 1; }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+      opacity: 1; } }
+  
+  .burger.burger-slide .burger-lines {
+    -webkit-transition: .1s all .15s;
+    -o-transition: .1s all .15s;
+    transition: .1s all .15s; }
+    .burger.burger-slide .burger-lines:after, .burger.burger-slide .burger-lines:before {
+      width: 1em;
+      -webkit-transition: .1s all .15s;
+      -o-transition: .1s all .15s;
+      transition: .1s all .15s; }
+  
+  .burger.burger-slide:not(.open) {
+    -webkit-animation-name: burgerAnimationSlide;
+            animation-name: burgerAnimationSlide;
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
+    background-color: transparent; }
+  
+  .burger.burger-slide.open .burger-lines {
+    -webkit-animation-name: burgerAnimationSlide;
+            animation-name: burgerAnimationSlide;
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
+    background-color: transparent; }
+    .burger.burger-slide.open .burger-lines:before, .burger.burger-slide.open .burger-lines:after {
+      left: 0.5em;
+      top: 0px; }
+    .burger.burger-slide.open .burger-lines:before {
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+    .burger.burger-slide.open .burger-lines:after {
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+
+.hamburger-sidebar {
+  position: fixed;
+  left: -100vw;
+  top: 0;
+  background-color: $white;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  padding: 2rem;
+  transition: left .3s;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__links {
+    margin: 1rem 0;
+    text-align: center;
+    li {
+      margin-bottom: 2rem;
+    }
+  }
+  &__social-links {
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 0 1rem;
+    }
+  }
+}
+.display {
+  left: 0;
+}
+@media screen and (min-width: 64em) {
+  .hamburger-sidebar {
+    visibility: hidden;
+  }
+}

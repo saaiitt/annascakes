@@ -1,0 +1,23 @@
+.how-it-started {
+    padding: 2rem 0;
+    .how-it-started-container {
+        @include wide-container;
+        text-align: center;
+        &__image {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+            gap: 1rem;
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .how-it-started-container__image {
+        margin: 2rem 0;
+    }
+}

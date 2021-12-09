@@ -1,0 +1,32 @@
+.all-our-cakes-are {
+    padding: 2rem 0;
+    .all-our-cakes-are-container {
+        @include wide-container;
+        text-align: center;
+        h2 {
+            margin-bottom: 2rem;
+        }
+        ul li {
+            margin-bottom: 2rem;
+            svg {
+                width: 4rem;
+                height: 4rem;
+            }
+            h3 {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+@media screen and (min-width: 43.75em) {
+    .all-our-cakes-are .all-our-cakes-are-container ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: 2rem;
+    }
+}
+@media screen and (min-width: 50em) {
+    .all-our-cakes-are {
+        padding: 4rem 0;
+    }
+}

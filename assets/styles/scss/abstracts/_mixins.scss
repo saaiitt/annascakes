@@ -1,0 +1,10 @@
+@mixin wide-container {
+    width: 88%;
+    margin: 0 auto;
+    max-width: 69rem;
+}
+@mixin space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,53 @@
+.get-in-touch {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/assets/images/get-in-touch-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .get-in-touch-container {
+        @include wide-container;
+        text-align: center;
+        padding: 4rem 0;
+        color: $white;
+        h2, a {
+            color: $white;
+        }
+        .get-in-touch-contact {
+            text-align: left;
+            margin: 1rem 0;
+            li {
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+        .get-in-touch-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            i {
+                font-size: 1.5rem;
+            }
+        }
+        .section-divider {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            &--top {
+                top: -1px;
+                transform: rotate(180deg);
+            }
+            &--bottom {
+                transform: none;
+                bottom: -1px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 50em) {
+    .get-in-touch {
+        // padding-top: 4rem;
+        .section-divider {
+            height: 60px;
+        }
+    }
+}
